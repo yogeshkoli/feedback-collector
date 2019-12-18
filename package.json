@@ -1,0 +1,19 @@
+{
+  "name": "fcserver",
+  "version": "1.0.0",
+  "description": "Feedback collection backend",
+  "main": "index.js",
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.13.4"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yogesh Koli <yogeshkoli@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
