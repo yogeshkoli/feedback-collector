@@ -11,7 +11,7 @@ require('./services/passport');
 
 
 async function connectToDb() {
-    await mongoose.connect(keys.MONGO_DB_DEV_URI, {
+    await mongoose.connect(keys.MONGO_DB_LIVE_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
