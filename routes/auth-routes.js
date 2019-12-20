@@ -9,6 +9,12 @@ module.exports = (app) => {
     }));
 
     // authenticate use with the code google oauth provided 
-    app.get(config.GOOGLE_callbackURL, passport.authenticate('google'));
+    app.get(config.GOOGLE_callbackURL, passport.authenticate('google'), (req, res) => {
+        res.redirect('/');
+    });
+
+    app.get('/api/current_user', (req, res) => {
+        res.send(req.user);
+    });
 
 };
