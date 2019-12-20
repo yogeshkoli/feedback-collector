@@ -17,4 +17,3 @@ server-laravel-echo-server.json
 .DS_Store
 /config/config.js
 /config/dev.js
-/config/prod.js
