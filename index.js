@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-require('./services/passport');
 const authRoutes = require('./routes/auth-routes');
 const keys = require('./config/keys');
 
+require('./models/User');
+require('./services/passport');
+
+
 async function connectToDb() {
-    await mongoose.connect(keys.MONGO_DB_LIVE_URI, {
+    await mongoose.connect(keys.MONGO_DB_DEV_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
