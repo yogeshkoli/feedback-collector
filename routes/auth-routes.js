@@ -1,5 +1,4 @@
 const passport = require('passport');
-const config = require('../config/config');
 
 module.exports = (app) => {
 
@@ -9,7 +8,7 @@ module.exports = (app) => {
     }));
 
     // authenticate use with the code google oauth provided 
-    app.get(config.GOOGLE_callbackURL, passport.authenticate('google'), (req, res) => {
+    app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
         res.redirect('/');
     });
 
