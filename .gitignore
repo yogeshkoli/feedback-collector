@@ -15,4 +15,6 @@ webpack.mix.js
 laravel-echo-server.json
 server-laravel-echo-server.json
 .DS_Store
-/config
+/config/config.js
+/config/dev.js
+/config/prod.js
