@@ -9,11 +9,15 @@
   },
   "scripts": {
     "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "cd /Users/yogesh/react-code/fcclient && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yogesh Koli <yogeshkoli@hotmail.com>",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.0.2",
     "cookie-session": "^1.3.3",
     "express": "^4.17.1",
     "mongoose": "^5.8.1",
