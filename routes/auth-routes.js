@@ -18,7 +18,8 @@ module.exports = (app) => {
 
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.send(req.user); // this will show blank page just to make sure there is not active user
+        // res.send(req.user); // this will show blank page just to make sure there is not active user
+        res.redirect('/');
     });
 
 };
