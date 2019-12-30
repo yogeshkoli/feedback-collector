@@ -8,6 +8,7 @@ const userSchema = new Schema({
     emails: Array,
     photos: Array,
     provider: String,
+    credits: { type: Number, default: 0 }
 
 });
 
