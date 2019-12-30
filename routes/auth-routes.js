@@ -9,7 +9,7 @@ module.exports = (app) => {
 
     // authenticate use with the code google oauth provided 
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-        res.redirect('/');
+        res.redirect('/surveys');
     });
 
     app.get('/api/current_user', (req, res) => {
@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     app.get('/api/logout', (req, res) => {
         req.logout();
-        // res.send(req.user); // this will show blank page just to make sure there is not active user
+        // res.send(req.u ser); // this will show blank page just to make sure there is not active user
         res.redirect('/');
     });
 
