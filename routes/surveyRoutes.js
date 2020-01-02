@@ -29,9 +29,13 @@ module.exports = (app) => {
             await survey.save();
             req.user.credits -= 1;
             const user = await req.user.save();
-            res.send('done');
+            res.send(user);
         } catch (err) {
             res.status(422).send(err);
         }
+    });
+
+    app.get('/api/surveys/thanks', (req, res) => {
+        res.send('Thanks for voting!');
     });
 };
