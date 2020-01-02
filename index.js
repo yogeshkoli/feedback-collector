@@ -2,14 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth-routes');
 const billingRoutes = require('./routes/billingRoutes');
+
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
 const keys = require('./config/keys');
 
 require('./models/User');
-require('./models/Survey');
 require('./services/passport');
+require('./models/Survey');
 
 
 async function connectToDb() {
@@ -34,6 +35,7 @@ app.use(passport.session());
 
 authRoutes(app);
 billingRoutes(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     // making sure that express will serve up the production assets like our main.js file or main.css file.
