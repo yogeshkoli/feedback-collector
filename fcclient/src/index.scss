@@ -1,0 +1,45 @@
+@import "materialize-css/sass/components/_color-variables.scss";
+
+// 1. color
+$primary-color: color("purple", "base") !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+
+// 2. Badges
+// ==========================================================================
+
+$badge-bg-color: $secondary-color !default;
+$badge-height: 22px !default;
+
+// 3. Buttons
+// ==========================================================================
+
+// Shared styles
+$button-border: none !default;
+$button-background-focus: lighten($secondary-color, 4%) !default;
+$button-font-size: 14px !default;
+$button-icon-font-size: 1.3rem !default;
+$button-height: 36px !default;
+$button-padding: 0 16px !default;
+$button-radius: 2px !default;
+
+@import "materialize-css/sass/materialize";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
