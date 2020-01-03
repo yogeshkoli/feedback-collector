@@ -1,38 +1,27 @@
+import _ from 'lodash';
 import React, { Component } from "react";
 import { reduxForm, Field } from 'redux-form'
 import SurveyField from './SurveyField';
 
+const FIELDS = [
+    { label: 'Title', name: 'title' },
+    { label: 'Subject Line', name: 'subject' },
+    { label: 'Email Body', name: 'body' },
+    { label: 'Recipient List', name: 'emails' },
+];
+
 class SurveyForm extends Component {
 
     renderFields() {
-        return (
-            <div>
-                <Field
-                    type="text"
-                    label="Title"
-                    name="title"
-                    component={SurveyField}
-                />
-                <Field
-                    type="text"
-                    label="subject"
-                    name="Subject Line"
-                    component={SurveyField}
-                />
-                <Field
-                    type="text"
-                    label="Body"
-                    name="body"
-                    component={SurveyField}
-                />
-                <Field
-                    type="text"
-                    label="Recipient List"
-                    name="emails"
-                    component={SurveyField}
-                />
-            </div>
-        );
+        return _.map(FIELDS, ({ name, label }) => {
+            return <Field
+                key={name}
+                type="text"
+                label={label}
+                name={name}
+                component={SurveyField}
+            />
+        });
     }
 
     render() {
