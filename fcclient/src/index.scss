@@ -1,6 +1,7 @@
 @import "materialize-css/sass/components/_color-variables.scss";
 
 // 1. color
+// ==========================================================================
 $primary-color: color("purple", "base") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
