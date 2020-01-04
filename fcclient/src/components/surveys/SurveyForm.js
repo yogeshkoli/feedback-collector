@@ -30,6 +30,7 @@ class SurveyForm extends Component {
             <div>
                 <div className="row">
                     <div className="col s8">
+                        <h2>Create Survey</h2>
                         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
                             {this.renderFields()}
 
@@ -38,7 +39,7 @@ class SurveyForm extends Component {
                                 <i className="material-icons right">close</i>
                             </Link>
 
-                            <button className="teal btn-flat right white-text" type="submit">
+                            <button className="purple btn-flat right white-text" type="submit">
                                 Next
                                 <i className="material-icons right">done</i>
                             </button>
@@ -51,6 +52,19 @@ class SurveyForm extends Component {
     }
 }
 
+function validate(values) {
+    const errors = {};
+
+    _.each(FIELDS, ({ name }) => {
+        if (!values[name]) {
+            errors[name] = `You must provide ${name}`;
+        }
+    });
+
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'surveyForm'
 })(SurveyForm);
