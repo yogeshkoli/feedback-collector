@@ -18,7 +18,7 @@ module.exports = (app) => {
             subject: subject,
             _user: req.user._id,
             dateSent: Date.now(),
-            recipients: recipients.split(',').map(email => ({ email: email.trim() })),
+            recipients: recipients.split(' ').map(email => ({ email: email.trim() })),
         });
 
         // send mail
