@@ -1,4 +1,4 @@
-const regularExpress = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const regularExpress = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 export default (emails) => {
     const invalidEmails = emails
@@ -7,7 +7,7 @@ export default (emails) => {
         .filter(email => regularExpress.test(email) === false);
 
     if (invalidEmails.length) {
-        return `These emails are invalid: ${invalidEmails}`;
+        return `${invalidEmails.length === 1 ? 'This email is: ' : 'These emails are invalid: '} ${invalidEmails}`;
     }
 
     return;
