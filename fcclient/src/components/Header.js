@@ -12,12 +12,17 @@ class Header extends Component {
             case false:
                 return <li><a href="/auth/google">Login with Google</a></li>;
             default:
-                return [<li key="4" style={{ margin: '0 10px' }}>Credits: {this.props.auth.credits}</li>,
-                <li key="1"><Link to="/">
-                    {this.props.auth.name.givenName}
-                </Link></li>,
-                <li key="3"><Stripe /></li>,
-                <li key="2"><a href="/api/logout">Logout</a></li>];
+                return [
+                    <li key="1" style={{ margin: '0 10px' }}>
+                        <Link to="/surveys">Surveys</Link>
+                    </li>,
+                    <li key="2" style={{ margin: '0 10px' }}>Credits: {this.props.auth.credits}</li>,
+                    <li key="3">
+                        <Link to="/">
+                            {this.props.auth.name.givenName}
+                        </Link></li>,
+                    <li key="4"><Stripe /></li>,
+                    <li key="5"><a href="/api/logout">Logout</a></li>];
         }
     }
 
