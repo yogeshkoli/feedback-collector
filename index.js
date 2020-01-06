@@ -12,7 +12,6 @@ require('./models/User');
 require('./services/passport');
 require('./models/Survey');
 
-
 async function connectToDb() {
     await mongoose.connect(keys.MONGO_DB_LIVE_URI, {
         useNewUrlParser: true,
