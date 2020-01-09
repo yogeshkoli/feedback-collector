@@ -39,7 +39,6 @@ module.exports = (app) => {
     });
 
     app.post('/api/surveys/webhooks', (req, res) => {
-
         const p = new Path('/api/surveys/:surveyId/:choice');
 
         _.chain(req.body)
@@ -67,5 +66,9 @@ module.exports = (app) => {
             .value();
 
         res.send({});
+    });
+
+    app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+        res.send('Thanks for voting!');
     });
 };
