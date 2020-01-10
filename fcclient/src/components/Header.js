@@ -162,7 +162,7 @@ class Header extends Component {
                     <Button key="2" to="/surveys" color="inherit" component={Link}>
                         My Surveys
                     </Button>
-                    <IconButton aria-label="show 4 new mails" color="inherit">
+                    {/* <IconButton aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={4} color="secondary">
                             <MailIcon />
                         </Badge>
@@ -171,7 +171,7 @@ class Header extends Component {
                         <Badge badgeContent={17} color="secondary">
                             <NotificationsIcon />
                         </Badge>
-                    </IconButton>
+                    </IconButton> */}
                     <IconButton
                         edge="end"
                         aria-label="account of current user"
