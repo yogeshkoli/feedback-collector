@@ -10,6 +10,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = theme =>
     createStyles({
@@ -70,6 +73,12 @@ class SurveyList extends Component {
                             <Button size="small">See Details</Button>
                             <span className="mr-2">Yes: {survey.yes}</span>
                             <span>No: {survey.no}</span>
+
+                            <Tooltip title="Delete">
+                                <IconButton aria-label="delete">
+                                    <DeleteIcon />
+                                </IconButton>
+                            </Tooltip>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -85,7 +94,6 @@ class SurveyList extends Component {
 
         return (
             <div>
-
                 <div className={classes.root}>
                     <Grid container spacing={1}>
                         <Grid container item xs={12} spacing={3}>
@@ -93,8 +101,6 @@ class SurveyList extends Component {
                         </Grid>
                     </Grid>
                 </div>
-
-
             </div>
         );
     }
