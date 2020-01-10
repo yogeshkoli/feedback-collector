@@ -94,16 +94,9 @@ class Header extends Component {
     //         case null:
     //             return 'Indetifying you...'
     //     case false:
-    //         return <li><a href="/signin">SignIn</a></li>;
-    //     // return <li><a href="/auth/google">Login with Google</a></li>;
+    //     return <li><a href="/auth/google">Login with Google</a></li>;
     //     default:
     //         return [
-    //             <li key="6" style={{ margin: '0 10px' }}>
-    //                 <Link to="/">Home</Link>
-    //             </li>,
-    //             <li key="1" style={{ margin: '0 10px' }}>
-    //                 <Link to="/surveys">Surveys</Link>
-    //             </li>,
     //             <li key="2" style={{ margin: '0 10px' }}>Credits: {this.props.auth.credits}</li>,
     //             <li key="3">
     //                 <Link to="/">
@@ -151,8 +144,12 @@ class Header extends Component {
             case false:
                 return (
                     <div className={classes.sectionDesktop}>
-                        <Button key="signup" to="/signup" component={Link} color="inherit">Sign up</Button>
-                        <Button key="signin" to="/signin" component={Link} color="inherit">Sign in</Button>
+                        <Link to="/signup" >
+                            <Button key="signup" color="inherit">Sign up</Button>
+                        </Link>
+                        <Link to="/signin">
+                            <Button key="signin" color="inherit">Sign in</Button>
+                        </Link>
                     </div>
                 );
 
@@ -247,26 +244,24 @@ class Header extends Component {
                     open={isMobileMenuOpen}
                     onClose={this.handleMobileMenuClose}
                 >
-                    <MenuItem >
+                    <MenuItem to="signin" component={Link}>
                         <IconButton
                             aria-label="account of current user"
                             aria-controls="primary-search-account-menu"
                             aria-haspopup="true"
                             color="inherit"
-                            to="/signin"
-                            component={Link}
                         >
                             <LockIcon />
                         </IconButton>
                         <p>Sign In</p>
                     </MenuItem>
-                    <MenuItem >
+                    <MenuItem to="/signup" component={Link}>
                         <IconButton
                             aria-label="account of current user"
                             aria-controls="primary-search-account-menu"
                             aria-haspopup="true"
                             color="inherit"
-                            component={Link}
+
                         >
                             <AddCircleOutlineIcon />
                         </IconButton>
