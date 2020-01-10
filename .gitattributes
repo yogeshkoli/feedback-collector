@@ -1,2 +1,4 @@
-fcclient/public/*
-fcclient/src/styles/*
+fcclient/public/* linguist-vendored
+/fcclient/public/* linguist-vendored
+fcclient/src/styles/* linguist-vendored
+/fcclient/src/styles/* linguist-vendored
