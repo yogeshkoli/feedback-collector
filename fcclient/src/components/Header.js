@@ -22,6 +22,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LockIcon from '@material-ui/icons/Lock';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import FeedbackIcon from '@material-ui/icons/Feedback';
 
 const useStyles = theme => ({
     grow: {
@@ -149,13 +151,20 @@ class Header extends Component {
             case false:
                 return (
                     <div className={classes.sectionDesktop}>
-                        <Button key="signup" href="/signup" color="inherit">Sign up</Button>
-                        <Button key="signin" href="/signin" color="inherit">Sign in</Button>
+                        <Button key="signup" to="/signup" component={Link} color="inherit">Sign up</Button>
+                        <Button key="signin" to="/signin" component={Link} color="inherit">Sign in</Button>
                     </div>
                 );
 
             default:
                 return (<div className={classes.sectionDesktop}>
+                    <Button variant="outlined" color="inherit" >
+                        Credits: {this.props.auth.credits}
+                    </Button>
+                    <Stripe />
+                    <Button key="2" to="/surveys" color="inherit" component={Link}>
+                        My Surveys
+                    </Button>
                     <IconButton aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={4} color="secondary">
                             <MailIcon />
@@ -224,7 +233,6 @@ class Header extends Component {
 
     renderMobileMenu() {
         const isMobileMenuOpen = Boolean(this.state.mobileMoreAnchorEl);
-        const { classes } = this.props;
 
         switch (this.props.auth) {
             case null:
@@ -245,7 +253,8 @@ class Header extends Component {
                             aria-controls="primary-search-account-menu"
                             aria-haspopup="true"
                             color="inherit"
-                            href="/signin"
+                            to="/signin"
+                            component={Link}
                         >
                             <LockIcon />
                         </IconButton>
@@ -257,7 +266,7 @@ class Header extends Component {
                             aria-controls="primary-search-account-menu"
                             aria-haspopup="true"
                             color="inherit"
-                            href="/signup"
+                            component={Link}
                         >
                             <AddCircleOutlineIcon />
                         </IconButton>
@@ -275,6 +284,25 @@ class Header extends Component {
                     onClose={this.handleMobileMenuClose}
                 >
                     <MenuItem>
+                        <IconButton aria-label="shows current available credit" color="inherit">
+                            <MonetizationOnIcon />
+                        </IconButton>
+                        <p>Credits: {this.props.auth.credits}</p>
+                    </MenuItem>
+                    <MenuItem>
+                        <IconButton aria-label="shows current available credit" color="inherit">
+                            <MonetizationOnIcon />
+                        </IconButton>
+                        <Stripe />
+                    </MenuItem>
+
+                    <MenuItem to="/surveys" component={Link}>
+                        <IconButton aria-label="Go to Surveys Page" color="inherit">
+                            <FeedbackIcon />
+                        </IconButton>
+                        <p>My Surveys</p>
+                    </MenuItem>
+                    {/* <MenuItem>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
                                 <MailIcon />
@@ -289,7 +317,7 @@ class Header extends Component {
                             </Badge>
                         </IconButton>
                         <p>Notifications</p>
-                    </MenuItem>
+                    </MenuItem> */}
                     <MenuItem onClick={this.handleProfileMenuOpen}>
                         <IconButton
                             aria-label="account of current user"

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Button from '@material-ui/core/Button';
 
 class Stripe extends Component {
     render() {
@@ -13,10 +14,10 @@ class Stripe extends Component {
                 token={token => this.props.handleToken(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
             >
-                <button className="btn">
-                    ADD CREDITS
-                </button>
-            </StripeCheckout>
+                <Button className="py-6 px-8" style={{ marginTop: '7px' }} key="1" color="inherit">
+                    Buy Credits
+                </Button>
+            </StripeCheckout >
         );
     }
 }
