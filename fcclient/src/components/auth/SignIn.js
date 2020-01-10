@@ -98,6 +98,16 @@ class SignIn extends Component {
                         >
                             Sign In
           </Button>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="secondary"
+                            className={classes.submit}
+                            href="/auth/google"
+                        >
+                            Sign In with Google
+          </Button>
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
