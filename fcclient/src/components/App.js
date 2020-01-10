@@ -9,6 +9,7 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import SignIn from './auth/SignIn';
 
 const VoitingFeedback = () => <p>Thanks for voting!</p>;
 
@@ -25,6 +26,7 @@ class App extends Component {
                     <div>
                         <Header />
                         <Route exact path="/" component={Landing} />
+                        <Route exact path="/signin" component={SignIn} />
                         <Route exact path="/surveys" component={Dashboard} />
                         <Route path="/surveys/new" component={SurveyNew} />
                         <Route path="/api/surveys/:surveyId/:choice" component={VoitingFeedback} />
