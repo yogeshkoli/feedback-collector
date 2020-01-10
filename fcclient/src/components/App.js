@@ -5,6 +5,10 @@ import * as actions from '../actions';
 
 import './App.css';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
@@ -21,18 +25,22 @@ class App extends Component {
 
     render() {
         return (
-            <div className="main">
+            <React.Fragment>
+                <CssBaseline />
+
                 <BrowserRouter>
                     <div>
                         <Header />
-                        <Route exact path="/" component={Landing} />
-                        <Route exact path="/signin" component={SignIn} />
-                        <Route exact path="/surveys" component={Dashboard} />
-                        <Route path="/surveys/new" component={SurveyNew} />
-                        <Route path="/api/surveys/:surveyId/:choice" component={VoitingFeedback} />
+                        <Container fixed>
+                            <Route exact path="/" component={Landing} />
+                            <Route exact path="/signin" component={SignIn} />
+                            <Route exact path="/surveys" component={Dashboard} />
+                            <Route path="/surveys/new" component={SurveyNew} />
+                            <Route path="/api/surveys/:surveyId/:choice" component={VoitingFeedback} />
+                        </Container>
                     </div>
                 </BrowserRouter>
-            </div>
+            </React.Fragment>
         );
     }
 }
