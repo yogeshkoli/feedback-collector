@@ -5,6 +5,7 @@ import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import validatedEmails from '../../utils/validateEmails';
 import formFields from './formFields';
+import Button from '@material-ui/core/Button';
 
 class SurveyForm extends Component {
 
@@ -23,26 +24,28 @@ class SurveyForm extends Component {
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="col s8">
-                        <h5>Create Survey</h5>
-                        <hr />
-                        <form onSubmit={this.props.handleSubmit((values) => this.props.onSurveySubmit())}>
-                            {this.renderFields()}
+                <h5>Create Survey</h5>
+                <hr />
+                <form onSubmit={this.props.handleSubmit((values) => this.props.onSurveySubmit())}>
+                    {this.renderFields()}
 
-                            <Link to="/surveys" className="red btn-flat left white-text">
-                                Cancel
+                    {/* <Link to="/surveys" className="red btn-flat left white-text">
+                        Cancel
                                 <i className="material-icons right">close</i>
-                            </Link>
+                    </Link> */}
 
-                            <button className="purple btn-flat right white-text" type="submit">
-                                Next
+                    {/* <button className="purple btn-flat right white-text" type="submit">
+                        Next
                                 <i className="material-icons right">done</i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                    </button> */}
 
+                    <Link to="/surveys">
+                        <Button variant="contained">Cancel</Button>
+                    </Link>
+                    <Button variant="contained" color="primary" type="submit">
+                        Next
+                    </Button>
+                </form>
             </div>
         );
     }
