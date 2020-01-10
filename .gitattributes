@@ -2,3 +2,4 @@ fcclient/public/* linguist-vendored
 /fcclient/public/* linguist-vendored
 fcclient/src/styles/* linguist-vendored
 /fcclient/src/styles/* linguist-vendored
+/fcclient/src/index.scss linguist-vendored
