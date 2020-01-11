@@ -26,7 +26,12 @@ class App extends Component {
 
     render() {
         return (
-            <SnackbarProvider>
+            <SnackbarProvider iconVariant={{
+                success: '✅',
+                error: '✖️',
+                warning: '⚠️',
+                info: 'ℹ️',
+            }}>
                 <React.Fragment>
                     <CssBaseline />
 
