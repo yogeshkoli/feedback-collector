@@ -49,11 +49,8 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
                     Back
                 <i className="material-icons right">close</i>
                 </button>
-                <button className="green btn-flat right white-text" onClick={surveySender('success')}>
-                    Send Survey
-                <i className="material-icons right">email</i>
-                </button>
-                <Button onClick={surveySender('success')}>Show success snackbar</Button>
+
+                <Button onClick={surveySender('success')}> <i className="material-icons right">email</i> Send Survey</Button>
             </div>
         </div>
     );

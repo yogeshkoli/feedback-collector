@@ -29,16 +29,6 @@ class SurveyForm extends Component {
                 <form onSubmit={this.props.handleSubmit((values) => this.props.onSurveySubmit())}>
                     {this.renderFields()}
 
-                    {/* <Link to="/surveys" className="red btn-flat left white-text">
-                        Cancel
-                                <i className="material-icons right">close</i>
-                    </Link> */}
-
-                    {/* <button className="purple btn-flat right white-text" type="submit">
-                        Next
-                                <i className="material-icons right">done</i>
-                    </button> */}
-
                     <Link to="/surveys">
                         <Button variant="contained">Cancel</Button>
                     </Link>
