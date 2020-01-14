@@ -3,6 +3,10 @@ import StripeCheckout from 'react-stripe-checkout';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Button from '@material-ui/core/Button';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
 
 class Stripe extends Component {
     render() {
@@ -14,9 +18,10 @@ class Stripe extends Component {
                 token={token => this.props.handleToken(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
             >
-                <Button className="py-6 px-8" style={{ marginTop: '7px' }} key="1" color="inherit">
-                    Buy Credits
-                </Button>
+                <ListItem button key="buy-credits" >
+                    <ListItemIcon><AttachMoneyOutlinedIcon /></ListItemIcon>
+                    <ListItemText primary="Buy Credits" />
+                </ListItem>
             </StripeCheckout >
         );
     }

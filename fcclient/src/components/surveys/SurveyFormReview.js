@@ -24,7 +24,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
     const { enqueueSnackbar } = useSnackbar();
 
     const surveySender = variant => async () => {
-        const re = await submitSurvey(formValues, history)
+        await submitSurvey(formValues, history)
         enqueueSnackbar('Survey has been sent successfully!', {
             variant,
             anchorOrigin: {

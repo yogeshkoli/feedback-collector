@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Stripe from './Stripe';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -10,6 +12,9 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 
 const useStyles = makeStyles(theme => ({
     list: {
@@ -48,21 +53,22 @@ export default function SwipeableTemporaryDrawer() {
             onKeyDown={toggleDrawer(side, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key="home" to="/" component={Link}>
+                    <ListItemIcon><HomeOutlinedIcon /></ListItemIcon>
+                    <ListItemText primary='Home' />
+                </ListItem>
+                <ListItem button key="surveys" to="/surveys" component={Link}>
+                    <ListItemIcon><AssessmentOutlinedIcon /></ListItemIcon>
+                    <ListItemText primary="Surveys" />
+                </ListItem>
+                <Stripe />
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key="settings" to="/" component={Link}>
+                    <ListItemIcon><SettingsOutlinedIcon /></ListItemIcon>
+                    <ListItemText primary="Settings" />
+                </ListItem>
             </List>
         </div>
     );

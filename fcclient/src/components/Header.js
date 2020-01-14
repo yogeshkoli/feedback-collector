@@ -10,13 +10,10 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LockIcon from '@material-ui/icons/Lock';
@@ -95,7 +92,6 @@ class Header extends Component {
     //         case null:
     //             return 'Indetifying you...'
     //     case false:
-    //     return <li><a href="/auth/google">Login with Google</a></li>;
     //     default:
     //         return [
     //             <li key="2" style={{ margin: '0 10px' }}>Credits: {this.props.auth.credits}</li>,
@@ -103,8 +99,6 @@ class Header extends Component {
     //                 <Link to="/">
     //                     {this.props.auth.name.givenName}
     //                 </Link></li>,
-    //             <li key="4"><Stripe /></li>,
-    //             <li key="5"><a href="/api/logout">Logout</a></li>];
     // }
     // }
 
@@ -158,10 +152,6 @@ class Header extends Component {
                 return (<div className={classes.sectionDesktop}>
                     <Button variant="outlined" color="inherit" >
                         Credits: {this.props.auth.credits}
-                    </Button>
-                    <Stripe />
-                    <Button key="2" to="/surveys" color="inherit" component={Link}>
-                        My Surveys
                     </Button>
                     {/* <IconButton aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={4} color="secondary">
@@ -285,19 +275,7 @@ class Header extends Component {
                         </IconButton>
                         <p>Credits: {this.props.auth.credits}</p>
                     </MenuItem>
-                    <MenuItem>
-                        <IconButton aria-label="shows current available credit" color="inherit">
-                            <MonetizationOnIcon />
-                        </IconButton>
-                        <Stripe />
-                    </MenuItem>
 
-                    <MenuItem to="/surveys" component={Link}>
-                        <IconButton aria-label="Go to Surveys Page" color="inherit">
-                            <FeedbackIcon />
-                        </IconButton>
-                        <p>My Surveys</p>
-                    </MenuItem>
                     {/* <MenuItem>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
