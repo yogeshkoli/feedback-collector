@@ -13,7 +13,6 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
@@ -24,6 +23,8 @@ import LockIcon from '@material-ui/icons/Lock';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import FeedbackIcon from '@material-ui/icons/Feedback';
+
+import LeftMenu from './LeftMenu';
 
 const useStyles = theme => ({
     grow: {
@@ -348,14 +349,7 @@ class Header extends Component {
                 <div className={classes.grow}>
                     <AppBar position="static">
                         <Toolbar>
-                            <IconButton
-                                edge="start"
-                                className={classes.menuButton}
-                                color="inherit"
-                                aria-label="open drawer"
-                            >
-                                <MenuIcon />
-                            </IconButton>
+                            <LeftMenu></LeftMenu>
                             <Typography className={classes.title} variant="h6" noWrap>
                                 Feedback Collector
                             </Typography>
