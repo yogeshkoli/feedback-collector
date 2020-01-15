@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Stripe from './Stripe';
 
 import { fade, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -19,7 +18,6 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LockIcon from '@material-ui/icons/Lock';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
-import FeedbackIcon from '@material-ui/icons/Feedback';
 
 import LeftMenu from './LeftMenu';
 
