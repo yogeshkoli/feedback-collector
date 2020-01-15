@@ -376,24 +376,6 @@ class Header extends Component {
                 {this.renderContent()}
             </div>
         );
-
-
-        // return (
-        //     <div>
-        //         <nav className="AppNav">
-        //             <div className="nav-wrapper">
-
-        //                 <Link to={this.props.auth ? '/surveys' : '/'} className="brand-logo">
-        //                     Feedback Collector
-        //                 </Link>
-
-        //                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-        //                     {this.renderContent()}
-        //                 </ul>
-        //             </div>
-        //         </nav>
-        //     </div>
-        // );
     }
 }
 
