@@ -8,7 +8,7 @@ module.exports = (app) => {
     }));
 
     // authenticate use with the code google oauth provided 
-    app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
+    app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
         res.redirect('/surveys');
     });
 
@@ -26,9 +26,8 @@ module.exports = (app) => {
     // Github authentication 
     app.get('/auth/github', passport.authenticate('github', { scope: ['user:email'] }));
 
-    app.get('/auth/github/callback',
-        passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
-            res.redirect('/surveys');
-        });
+    app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
+        res.redirect('/surveys');
+    });
 
 };
