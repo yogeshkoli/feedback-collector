@@ -30,4 +30,9 @@ module.exports = (app) => {
         res.redirect('/surveys');
     });
 
+    // Twitter authentication
+    app.get('/auth/twitter', passport.authenticate('twitter'));
+
+    app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/surveys', failureRedirect: '/login' }));
+
 };

@@ -11,6 +11,7 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
 require('./services/github');
+require('./services/twitter');
 require('./models/Survey');
 
 async function connectToDb() {
