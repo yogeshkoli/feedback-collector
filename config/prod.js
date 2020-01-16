@@ -8,4 +8,6 @@ module.exports = {
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     SENDGRID_KEY: process.env.SENDGRID_KEY,
     REDIRECT_DOMAIN: process.env.REDIRECT_DOMAIN,
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
 };

@@ -10,6 +10,7 @@ const keys = require('./config/keys');
 
 require('./models/User');
 require('./services/passport');
+require('./services/github');
 require('./models/Survey');
 
 async function connectToDb() {

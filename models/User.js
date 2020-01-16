@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
     googleId: String,
+    githubId: String,
     displayName: String,
     name: Object,
     emails: Array,
