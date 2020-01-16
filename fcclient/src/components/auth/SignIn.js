@@ -80,6 +80,17 @@ class SignIn extends Component {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        href="/auth/twitter"
+                    >
+                        Sign In with Twitter
+          </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}
                         href="/auth/github"
                     >
                         Sign In with Github
