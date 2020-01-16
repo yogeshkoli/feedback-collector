@@ -62,6 +62,31 @@ class SignIn extends Component {
                     <Typography component="h1" variant="h5">
                         Sign in
         </Typography>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="secondary"
+                        className={classes.submit}
+                        href="/auth/google"
+                    >
+                        Sign In with Google
+          </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}
+                        href="/auth/github"
+                    >
+                        Sign In with Github
+          </Button>
+
+                    <h4>OR</h4>
+
                     <form className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
@@ -98,16 +123,7 @@ class SignIn extends Component {
                         >
                             Sign In
           </Button>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="secondary"
-                            className={classes.submit}
-                            href="/auth/google"
-                        >
-                            Sign In with Google
-          </Button>
+
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
