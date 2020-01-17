@@ -149,10 +149,12 @@ class Header extends Component {
 
             default:
                 return (<div className={classes.sectionDesktop}>
-                    <Button variant="outlined" color="inherit" >
+                    <Button color="inherit" >
                         Credits: {this.props.auth.credits}
                     </Button>
+
                     <Stripe />
+                    <Button color="inherit">{this.props.auth.displayName}</Button>
                     {/* <IconButton aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={4} color="secondary">
                             <MailIcon />

@@ -14,7 +14,7 @@ class Stripe extends Component {
                 token={token => this.props.handleToken(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
             >
-                <Button className="py-6 px-8" style={{ marginTop: '7px' }} key="1" color="inherit" >
+                <Button variant="outlined" className="py-6 px-8" style={{ marginTop: '7px' }} key="1" color="secondary" >
                     ADD CREDITS
                 </Button>
             </StripeCheckout >
