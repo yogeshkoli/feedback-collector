@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Stripe from './Stripe';
 import { withStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -53,7 +52,6 @@ class LeftMenu extends Component {
                     <ListItemIcon><AssessmentOutlinedIcon /></ListItemIcon>
                     <ListItemText primary="Surveys" />
                 </ListItem>
-                <Stripe />
             </List>
             <Divider />
             <List>
