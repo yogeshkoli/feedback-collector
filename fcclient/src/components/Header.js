@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Stripe from './Stripe';
 
 import { fade, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -151,6 +152,7 @@ class Header extends Component {
                     <Button variant="outlined" color="inherit" >
                         Credits: {this.props.auth.credits}
                     </Button>
+                    <Stripe />
                     {/* <IconButton aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={4} color="secondary">
                             <MailIcon />
@@ -272,6 +274,13 @@ class Header extends Component {
                             <MonetizationOnIcon />
                         </IconButton>
                         <p>Credits: {this.props.auth.credits}</p>
+                    </MenuItem>
+
+                    <MenuItem>
+                        <IconButton aria-label="Add credits into your account" color="inherit">
+                            <MonetizationOnIcon />
+                        </IconButton>
+                        <Stripe />
                     </MenuItem>
 
                     {/* <MenuItem>
