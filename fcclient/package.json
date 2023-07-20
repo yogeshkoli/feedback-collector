@@ -11,7 +11,7 @@
     "axios": "^0.21.2",
     "http-proxy-middleware": "^0.20.0",
     "materialize-css": "^1.0.0",
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "notistack": "^0.9.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
